@@ -1,0 +1,450 @@
+<core:View 
+  xmlns:core="sap.ui.core"
+  xmlns:mvc="sap.ui.core.mvc" 
+  xmlns="sap.m"
+  controllerName="zbp_utility.main"
+  xmlns:html="http://www.w3.org/1999/xhtml" 
+  xmlns:f="sap.ui.layout.form"
+  xmlns:l="sap.ui.layout">
+  <Page title="Customer Utility">
+    <Label id="bpInputLabel" text="BP ID" labelFor="bpInput"/>
+    <Input id="bpInput" type="Number" placeholder="Enter BP ID ..."
+      showSuggestion="true" maxLength="10">
+    </Input>
+    <Button text="Get BP Info" press="pressGetBPInfo" type="Accept"/>
+    <IconTabBar id="idIconTabBarNoIcons"
+      expanded="{device>/isNoPhone}" class="sapUiResponsiveContentPadding">
+      <items>
+        <IconTabFilter text="Main BP Info">
+          <Toolbar>
+            <ToolbarSpacer />
+            <Button text="Edit" id="mainEdit" type="Transparent"
+              press="onPressEditMain" />
+            <Button text="Cancel" id="mainCancel" type="Transparent"
+              press="onPressCancelMain" enabled="false" />
+            <ToolbarSpacer />
+          </Toolbar>
+          <VBox class="sapUiSmallMargin">
+            <f:SimpleForm id="basicBPInfoForm" editable="true"
+              layout="ResponsiveGridLayout" labelSpanXL="4" labelSpanL="4"
+              labelSpanM="12" labelSpanS="12" adjustLabelSpan="false"
+              emptySpanXL="0" emptySpanL="0" emptySpanM="0" emptySpanS="0"
+              columnsXL="2" columnsL="2" columnsM="1"
+              singleContainerFullSize="false">
+              <f:content>
+                <core:Title text="Basic Info" />
+                <Label text="BP ID" />
+                <Text text="{/output/mainInfo/partner}" />
+                <Label text="Name" />
+                <Text text="{/output/mainInfo/name1Text}" />
+                <Label text="Type" />
+                <Text text="{/output/mainInfo/typeDescr}" />
+                <Label text="Nationality" />
+                <Text text="{/output/mainInfo/natioDescr}" />
+                <Label text="Entity" />
+                <Text text="{/output/mainInfo/entityDescr}" />
+                <Label text="Segment" />
+                <Text text="{/output/mainInfo/segmentDescr}" />
+                <core:Title text="Risk Rating" />
+                <Label text="Risk Score" />
+                <Input id="riskScore" type="Number"
+                  value="{/output/mainInfo/riskRating/riskScore}"
+                  editable="false" change="onChangeRiskScore" />
+                <Label text="Risk Date" />
+                <Text text="{/output/mainInfo/riskRating/riskDate}" />
+                <Label text="Risk Level" />
+                <Text id="riskLevel"
+                  text="{/output/mainInfo/riskRating/riskLevel}" />
+                <Label text="Next Review Date" />
+                <Text text="{/output/mainInfo/riskRating/nextDate}" />
+                <Label text="Last Review Date" />
+                <Text text="{/output/mainInfo/riskRating/lastDate}" />
+              </f:content>
+            </f:SimpleForm>
+            <Panel expandable="true" headerText="Risk Indicators"
+              width="auto" class="sapUiResponsiveMargin">
+              <content>
+                <Toolbar>
+                      <Label id="idActimizeMessage" text=""
+                             visible="false" />
+                </Toolbar>
+                <Table id="idRiskTable" inset="false"
+                  items="{
+                     path: '/output/bpRiskInd',
+                     sorter: {
+                                  path: 'riskInd'
+                                 }
+                                }">
+                  <columns>
+                    <Column>
+                      <Text text="Risk Indicator" />
+                    </Column>
+                    <Column>
+                      <Text text="Status" />
+                    </Column>
+                  </columns>
+                  <items>
+                    <ColumnListItem>
+                      <cells>
+                        <Text text="{riskInd}" />
+                        <ComboBox id="comboRisk" showSecondaryValues="true" selectedKey="{status}" value="{statusDesc}"
+                          items="{
+                                              path: '/output/riskStatusCollection',
+                                              sorter: { path: 'status' }
+                                            }">
+                          <core:ListItem key="{status}" text="{statusDesc}"
+                            additionalText="{status}" />
+                        </ComboBox>
+                      </cells>
+                    </ColumnListItem>
+                  </items>
+                </Table>
+              </content>
+            </Panel>
+          </VBox>
+        </IconTabFilter>
+         <IconTabFilter text="BP Status">
+         <Panel expandable="true" headerText="BP Status"
+                width="auto" class="sapUiResponsiveMargin">
+          <content>
+            <Table id="idBPStatusTable" inset="false"
+              items="{path: '/output/bpStatus'}">
+                <columns>
+                  <Column>
+                    <Text text="Status" />
+                  </Column>
+                  <Column>
+                    <Text text="Description" />
+                  </Column>
+                  <Column>
+                    <Text text="Valid From" />
+                  </Column>
+                  <Column>
+                    <Text text="Valid To" />
+                  </Column>
+                </columns>
+                <items>
+                  <ColumnListItem>
+                    <cells>
+                      <Text text="{bpStatus}" />
+                      <Text text="{bpStatusDesc}" />
+                      <Text text="{dateFrom}" />
+                      <Text text="{dateFrom}" />
+                    </cells>
+                  </ColumnListItem>
+                </items>
+            </Table>
+          </content>
+         </Panel>
+         <Panel expandable="true" headerText="KYC Status"
+                width="auto" class="sapUiResponsiveMargin">
+          <content>
+            <Table id="idKYCStatusTable" inset="false"
+              items="{path: '/output/bpKycStatus'}">
+                <columns>
+                  <Column>
+                    <Text text="Country" />
+                </Column>
+                  <Column>
+                    <Text text="Role" />
+                </Column>
+                <Column>
+                  <Text text="Status" />
+                </Column>
+                 <Column>
+                   <Text text="Description" />
+                </Column>
+                </columns>
+                <items>
+                  <ColumnListItem>
+                    <cells>
+                      <Text text="{kycCountry}" />
+                      <Text text="{kycRoleDescr}" />
+                      <Text text="{kycStatus}" />
+                      <Text text="{kycStatusDescr}" />
+                    </cells>
+                  </ColumnListItem>
+                </items>
+            </Table>
+          </content>
+         </Panel>
+        </IconTabFilter>
+         <IconTabFilter text="BP Relationships">
+          <Table id="idBPRelationsTable" inset="false"
+            items="{path: '/output/bpRelations'}">
+            <headerToolbar>
+              <OverflowToolbar>
+                <content>
+                  <Title text="Related Parties" level="H2"/>
+                  <Button type="Emphasized" id="idFilterRelBP" text="Show Active" press="onPressRelFilter"/>
+                </content>
+              </OverflowToolbar>
+            </headerToolbar>    
+            <columns>
+              <Column>
+                <Text text="Relationship" />
+              </Column>
+              <Column>
+                <Text text="Partner ID" />
+              </Column>
+              <Column>
+                <Text text="Partner Name" />
+              </Column>
+              <Column>
+                <Text text="Valid From" />
+              </Column>
+              <Column>
+                <Text text="Valid To" />
+              </Column>
+            </columns>
+            <items>
+              <ColumnListItem>
+                <cells>
+                  <Text text="{relDesc}" />
+                  <Text text="{partner}" />
+                  <Text text="{partnerName}" />
+                  <Text text="{dateFrom}" />
+                  <Text text="{dateTo}" />
+                </cells>
+              </ColumnListItem>
+            </items>
+          </Table>
+        </IconTabFilter>
+        <IconTabFilter text="PIP Info">
+          <Table id="idPIPTable" inset="false"
+            items="{path: '/output/pipInfo'}">
+            <columns>
+              <Column>
+                <Text text="Question" />
+              </Column>
+              <Column>
+                <Text text="Answer" />
+              </Column>
+            </columns>
+            <items>
+              <ColumnListItem>
+                <cells>
+                  <Text text="{pipQuestion}" />
+                  <Text text="{pipAnswer}" />
+                </cells>
+              </ColumnListItem>
+            </items>
+          </Table>
+        </IconTabFilter>
+        <IconTabFilter text="Product Portfolio">
+          <Table id="idPortfolio" inset="false"
+            items="{path: '/output/bpAccounts'}">
+            <columns>
+              <Column>
+                <Text text="System"/>
+              </Column>
+              <Column>
+                <Text text="Account ID" />
+              </Column>
+              <Column>
+                <Text text="Product ID" />
+              </Column>
+              <Column>
+                <Text text="Status" />
+              </Column>
+              <Column>
+                <Text text="Create Date" />
+              </Column>
+              <Column>
+                <Text text="End Date" />
+              </Column>
+              <Column>
+                <Text text="Partner ID" />
+              </Column>
+              <Column>
+                <Text text="Partner Function" />
+              </Column>
+              <Column>
+                <Text text="" />
+              </Column>             
+            </columns>
+            <items>
+              <ColumnListItem>
+                <cells>
+                  <ObjectIdentifier
+                    title="{systemId}"
+                    text="{systemDescr}"/>
+                  <ObjectIdentifier
+                    title="{accountId}"
+                    text="{accountDescr}"/>
+                  <Text text="{accountProductId}" />
+                  <Text text="{statusDescr}" />
+                  <Text text="{accountCreateDate}" />
+                  <Text text="{accountEndDate}" />
+                  <ObjectIdentifier
+                    title="{ppartnerId}"
+                    text="{ppartnerName}"/>
+                  <Text text="{pfunctionDescr}" />
+                  <Link text="Related Parties" press="handleTableSelectDialogPress"/>
+                </cells>
+              </ColumnListItem>
+            </items>
+          </Table>
+        </IconTabFilter>
+        <IconTabFilter id="idCreditStub" text="Credit Stub" visible="true">
+          <Table id="idStubHeaderTable" inset="false"
+            items="{path: '/output/bpCreditStub'}">
+            <columns>
+              <Column>
+                <Text text="Process Type"/>
+              </Column>
+              <Column>
+                <Text text="Stage" />
+              </Column>
+              <Column>
+                <Text text="Product" />
+              </Column>
+              <Column>
+                <Text text="In NCA?" />
+              </Column>
+              <Column>
+                <Text text="Credit Stub?" />
+              </Column>
+            </columns>
+            <items>
+              <ColumnListItem>
+                <cells>
+                  <Text text="{processType}"/>
+                  <Text text="{stage}"/>
+                  <Text text="{product}"/>
+                  <CheckBox selected="{ncaInd}"/>
+                  <CheckBox selected="{credStub}" />
+                </cells>
+              </ColumnListItem>
+            </items>
+          </Table>          
+        </IconTabFilter>
+        <IconTabFilter id="idQuotes" text="Sales Quotes">
+          <Button text="Refresh Quotes" press="onPressGetQuotes" />
+          <Button text="Create Quote" press="onPressCreateQuote" />
+          <Button id="idQuoteExpire" text="Expire Selected" press="onPressExpireQuotes" enabled="false"/>
+          <Table id="idQuoteHeaderTable" inset="false"
+            items="{path: '/opportunities'}">
+            <columns>
+              <Column>
+                <Text text="Quote ID" />
+              </Column>
+              <Column>
+                <Text text="Channel" />
+              </Column>
+              <Column>
+                <Text text="NCA Ind" />
+              </Column>
+              <Column>
+                <Text text="Juristic Ind" />
+              </Column>
+              <Column>
+                <Text text="Expire?" />
+              </Column>
+            </columns>
+            <items>
+              <ColumnListItem>
+                <cells>
+                  <Link text="{path: 'opportId',
+                             formatter: '.formatter.formatNumber'}" press="onPressOpportID" />
+                  <Text text="{originatingChannel}" />
+                  <Text text="{ncaProfile}" />
+                  <Text text="{jurIndicator}" />
+                  <CheckBox id="expireOppID" select="onExpireChkBoxSelect" />
+                </cells>
+              </ColumnListItem>
+            </items>
+          </Table>
+          <Table id="idQuoteItemsTable" inset="false" headerText="Items"
+            items="{items}">
+            <columns>
+              <Column>
+                <Text text="Item ID" />
+              </Column>
+              <Column>
+                <Text text="Product" />
+              </Column>
+              <Column>
+                <Text text="Insurance Plan" />
+              </Column>
+              <Column>
+                <Text text="Account Number" />
+              </Column>
+              <Column>
+                <Text text="Status" />
+              </Column>
+            </columns>
+            <items>
+              <ColumnListItem>
+                <cells>
+                  <Text text="{itemid}"/>
+                  <ObjectIdentifier
+                    title="{descriptionUc}"
+                    text="{product}"/>
+                  <Text text="{planType}" />
+                  <Text text="{path: 'existingAccount/accountNum',
+                               formatter: '.formatter.formatNumber'}"/>
+                  <Text text="{statusTable/0/txt30}" />      
+                </cells>
+              </ColumnListItem>
+            </items>
+          </Table>
+        </IconTabFilter>
+        <IconTabFilter id="idOffers" text="Sales Offers">
+          <Button text="Refresh Applications" press="onPressGetOffers" />
+          <Button text="Create Offer" press="onPressCreateOffer" enabled="false"/>
+          <Button id="idOfferExpire" text="Expire Selected" press="onPressExpireOffers" enabled="false"/>
+          <Table id="idOfferHeaderTable" inset="false"
+            items="{path: '/openApps'}">
+            <columns>
+              <Column>
+                <Text text="Offer ID" />
+              </Column>
+              <Column>
+                <Text text="Product ID" />
+              </Column>
+              <Column>
+                <Text text="Open Ind" />
+              </Column>
+              <Column>
+                <Text text="Process Type" />
+              </Column>
+              <Column>
+                <Text text="Orig Channel" />
+              </Column>
+              <Column>
+                <Text text="Expiry Date" />
+              </Column>
+              <Column>
+                <Text text="Expire?" />
+              </Column>
+            </columns>
+            <items>
+              <ColumnListItem>
+                <cells>
+                  <Text text="{offerNo}" />
+                  <Text text="{prodId}" />
+                  <Text text="{openInd}" />
+                  <Text text="{processType}" />
+                  <Text text="{origChannel}" />
+                  <Text text="{expiryDate}" />
+                  <CheckBox id="expireOfferID" select="onExpireOfferChkBoxSelect" />
+                </cells>
+              </ColumnListItem>
+            </items>
+          </Table>
+        </IconTabFilter>
+      </items>
+    </IconTabBar>
+    <footer>
+      <Toolbar>
+        <ToolbarSpacer />
+        <Button icon="sap-icon://action" type="Emphasized"
+          text="Save" press="onPressSave" tooltip="Save me"/>
+        <Button icon="sap-icon://cancel" type="Default" text="Cancel"
+          press="onPressCancel" />
+      </Toolbar>
+    </footer>
+  </Page>
+</core:View>
+

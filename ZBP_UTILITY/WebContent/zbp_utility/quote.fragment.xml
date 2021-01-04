@@ -1,0 +1,102 @@
+<core:FragmentDefinition
+  xmlns="sap.m"
+  xmlns:l="sap.ui.layout"
+  xmlns:f="sap.ui.layout.form"
+  xmlns:core="sap.ui.core">
+  <Dialog>
+  <VBox class="sapUiSmallMargin">
+    <f:SimpleForm id="createQuoteForm"
+      editable="true"
+      layout="ResponsiveGridLayout"
+      title="Quote Details"
+      labelSpanXL="3"
+      labelSpanL="3"
+      labelSpanM="3"
+      labelSpanS="12"
+      adjustLabelSpan="false"
+      emptySpanXL="4"
+      emptySpanL="4"
+      emptySpanM="4"
+      emptySpanS="0"
+      columnsXL="1"
+      columnsL="1"
+      columnsM="1"
+      singleContainerFullSize="false"  >
+      <f:content>
+        <core:Title text="Credit Info" />
+        <Label text="Product" />
+        <Select id="productSelect" selectedKey="ZAOD" change="onProductChange">
+          <items>
+            <core:Item text="Business Overdraft" key="ZAOD"/>
+            <core:Item text="Business Revolving Credit Plan" key="BRCP"/>
+          </items>
+        </Select>
+        <Label text="Min.Limit" />
+        <Input id="idMinLimit" type="Number" placeholder="Enter minimum credit amount.."/>
+        <Label text="Max.Limit" />
+        <Input id="idMaxLimit" type="Number" placeholder="Enter maximum credit amount.."/>
+        <Label text="Interest Rate" />
+        <Input id="idInterest" type="Number" placeholder="Enter interest rate percentage.."/>
+        <Label text="Term" />
+        <Text id="idCreditTerm" text="12 Months"/>
+        <core:Title text="Account Info"/>
+        <Label text="Account" />
+        <Select
+          id="accountSelect"
+          items="{
+            path: '/Accounts',
+            sorter: { path: 'systemId' }
+          }">
+          <core:Item key="{accountId}" text="{systemId} - {accountId}" />
+        </Select>
+        <core:Title text="Related Party Financials" />
+        <Label text="Related Party" />
+        <Select
+          id="partiesSelect"
+          forceSelection="true"
+          items="{
+            path: '/RelatedParties',
+            sorter: { path: 'bpId' }
+          }">
+          <core:Item key="{bpId}" text="{bpId} - {name}" />
+        </Select>
+        <Label text="Monthly Income" />
+        <Input id="idIncome" type="Number" placeholder="Enter monthly income amount.."/>
+        <Label text="Monthly Expense" />
+        <Input id="idExpense" type="Number" placeholder="Enter monthly expense amount.."/>
+        <Label text="Assets" />
+        <Input id="idAssets" type="Number" placeholder="Enter total assets.."/>
+        <Label text="Liabilities" />
+        <Input id="idLiabilities" type="Number" placeholder="Enter total liabilities.." />
+        <core:Title text="Entity Financials" />
+        <Label text="Annual Turnover" />
+        <Input id="idTurnover" type="Number" placeholder="Enter annual turnover amount.."/>
+        <Label text="Annual Expense" />
+        <Input id="idEntityExpense" type="Number" placeholder="Enter annual expense amount.."/>
+        <Label text="Assets" />
+        <Input id="idEntityAssets" type="Number" placeholder="Enter total assets.."/>
+        <Label text="Liabilities" />
+        <Input id="idEntityLiabilities" type="Number" placeholder="Enter total liabilities.." />
+        <core:Title text="Delivery Method" />
+        <Label text="Delivery Method" />
+        <Select
+          id="deliverySelect"
+          forceSelection="true"
+          items="{
+            path: '/DeliveryMethods',
+            sorter: { path: 'desc' }
+          }">
+          <core:Item key="{code}" text="{desc}" />
+        </Select>
+      </f:content>
+    </f:SimpleForm>
+  </VBox>
+  <Toolbar>
+    <ToolbarSpacer />
+      <Button icon="sap-icon://action" type="Emphasized"
+              text="Save" press="onPressQuoteSave" tooltip="Save me from my own cringe"/>
+      <Button icon="sap-icon://cancel" type="Default" text="Cancel"
+              press="onPressQuoteCancel" />
+      </Toolbar>
+  </Dialog>
+</core:FragmentDefinition>

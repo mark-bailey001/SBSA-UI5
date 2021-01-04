@@ -1,0 +1,267 @@
+{
+  "output" : {
+    "mainInfo" : {
+      "partner" : "0150215121",
+      "type" : "2",
+      "typeDescr" : "Organization",
+      "bpkind" : "ZRET",
+      "augrp" : "ZSBS",
+      "name1Text" : "SOLE PROP",
+      "legalEnty" : "ZL",
+      "entityDescr" : "Sole Proprietorship",
+      "segment" : "552",
+      "segmentDescr" : "BUSINESS (5)",
+      "fraudConsent" : "YES",
+      "riskRating" : {
+        "riskScore" : "6.21",
+        "riskDate" : "2020-03-17",
+        "riskLevel" : "LOW"
+      },
+      "actimizeStatus" : "FALSE"
+    },
+    "bpStatus" : [
+      {
+        "bpStatus" : "15",
+        "bpStatusDesc" : "IMPORTANT CUSTOMER",
+        "dateFrom" : "2020-05-01",
+        "dateTo" : "9999-12-31"
+      }
+    ],
+    "bpRelations" : [
+      {
+        "relType" : "ZACCOF",
+        "relDesc" : "Has Accounting Officer",
+        "partner" : "0150206701",
+        "partnerName" : "TESTINGDEVONEtest",
+        "dateFrom" : "2019-06-05",
+        "dateTo" : "9999-12-31"
+      },
+      {
+        "relType" : "ZBUSIN",
+        "relDesc" : "Has Business Representative",
+        "partner" : "0150206701",
+        "partnerName" : "TESTINGDEVONEtest",
+        "dateFrom" : "2015-05-15",
+        "dateTo" : "9999-12-31"
+      },
+      {
+        "relType" : "ZMEMBE",
+        "relDesc" : "Has Member",
+        "partner" : "0150206701",
+        "partnerName" : "TESTINGDEVONEtest",
+        "dateFrom" : "2019-06-05",
+        "dateTo" : "2020-03-15"
+      },
+      {
+        "relType" : "ZSOLEP",
+        "relDesc" : "Has Sole Proprietor",
+        "partner" : "0150206701",
+        "partnerName" : "TESTINGDEVONEtest",
+        "dateFrom" : "2015-05-15",
+        "dateTo" : "2019-09-04"
+      },
+      {
+        "relType" : "ZSOLEP",
+        "relDesc" : "Has Sole Proprietor",
+        "partner" : "0150206701",
+        "partnerName" : "TESTINGDEVONEtest",
+        "dateFrom" : "2020-03-16",
+        "dateTo" : "9999-12-31"
+      }
+    ],
+    "bpRiskInd" : [
+      {
+        "riskInd" : "PIP",
+        "status" : "Z02",
+        "statusDesc" : "Approved"
+      },
+      {
+        "riskInd" : "RISK",
+        "status" : "Z03",
+        "statusDesc" : "Referred"
+      },
+      {
+        "riskInd" : "SANCTION",
+        "status" : "Z02",
+        "statusDesc" : "Approved"
+      },
+      {
+        "riskInd" : "BO",
+        "status" : "Z01",
+        "statusDesc" : "In Progress"
+      }
+    ],
+    "bpKycStatus" : [
+      {
+        "kycCountry" : "ZA",
+        "kycRole" : "CUSTOMER",
+        "kycRoleDescr" : "Customer",
+        "kycStatus" : "Y",
+        "kycStatusDescr" : "Complete"
+      }
+    ],
+    "bpPayCards" : [
+      {
+        "validTo" : "9999-12-31",
+        "validFrom" : "1900-01-01",
+        "cardType" : "Z001",
+        "maskNumber" : "503615929417605",
+        "typeDescr" : "Autobank Card"
+      }
+    ],
+    "bpAccounts" : [
+      {
+        "systemId" : "001",
+        "systemDescr" : "BRANCH ACCOUNTING SYSTEM",
+        "accountId" : "282978593000",
+        "accountType" : "A0010",
+        "accountDescr" : "CHECKING ACCOUNTS",
+        "accountProductId" : "0161",
+        "accountStatus" : "E0004",
+        "statusDescr" : "OPEN",
+        "accountCreateDate" : "2015-05-15",
+        "accountEndDate" : "9999-12-31",
+        "accountTerminationDate" : "9999-12-31",
+        "ppartnerFunction" : "Z0000093",
+        "pfunctionDescr" : "Account Holder",
+        "ppartnerId" : "0150215121",
+        "ppartnerName" : "SOLE PROP"
+      },
+      {
+        "systemId" : "110",
+        "systemDescr" : "SAP BPP",
+        "accountId" : "10001901719",
+        "accountType" : "A0010",
+        "accountDescr" : "CHECKING ACCOUNTS",
+        "accountProductId" : "4478",
+        "accountName" : "TEYTS",
+        "accountStatus" : "E0004",
+        "statusDescr" : "OPEN",
+        "activityStatus" : "E0008",
+        "activityDescr" : "Active",
+        "accountCreateDate" : "2020-03-16",
+        "accountEndDate" : "9999-12-31",
+        "accountTerminationDate" : "9999-12-31",
+        "ppartnerFunction" : "Z0000093",
+        "pfunctionDescr" : "Account Holder",
+        "ppartnerId" : "0150215121",
+        "ppartnerName" : "SOLE PROP",
+        "relatedParties" : [
+          {
+            "partnerFunction" : "Z0000086",
+            "functionDescr" : "Signatory",
+            "businessPartnerId" : "0150206701",
+            "businessPartnerName" : "TESTING T DEVONEtest",
+            "validFromDate" : "2020-03-16",
+            "validToDate" : "9999-12-31"
+          }
+        ]
+      },
+      {
+        "systemId" : "110",
+        "systemDescr" : "SAP BPP",
+        "accountId" : "10001901727",
+        "accountType" : "A0020",
+        "accountDescr" : "SAVINGS DEPOSITS",
+        "accountProductId" : "4489",
+        "accountName" : "PURESAVETEST",
+        "accountStatus" : "E0004",
+        "statusDescr" : "OPEN",
+        "activityStatus" : "E0008",
+        "activityDescr" : "Active",
+        "accountCreateDate" : "2020-03-16",
+        "accountEndDate" : "9999-12-31",
+        "accountTerminationDate" : "9999-12-31",
+        "ppartnerFunction" : "Z0000093",
+        "pfunctionDescr" : "Account Holder",
+        "ppartnerId" : "0150215121",
+        "ppartnerName" : "SOLE PROP",
+        "relatedParties" : [
+          {
+            "partnerFunction" : "Z0000086",
+            "functionDescr" : "Signatory",
+            "businessPartnerId" : "0150206701",
+            "businessPartnerName" : "TESTING T DEVONEtest",
+            "validFromDate" : "2020-03-16",
+            "validToDate" : "9999-12-31"
+          }
+        ]
+      },
+      {
+        "systemId" : "110",
+        "systemDescr" : "SAP BPP",
+        "accountId" : "10001930735",
+        "accountType" : "A0010",
+        "accountDescr" : "CHECKING ACCOUNTS",
+        "accountProductId" : "4477",
+        "accountName" : "SOLE PROP - 100020",
+        "accountStatus" : "E0004",
+        "statusDescr" : "OPEN",
+        "activityStatus" : "E0008",
+        "activityDescr" : "Active",
+        "accountCreateDate" : "2020-05-11",
+        "accountEndDate" : "9999-12-31",
+        "accountTerminationDate" : "9999-12-31",
+        "ppartnerFunction" : "Z0000093",
+        "pfunctionDescr" : "Account Holder",
+        "ppartnerId" : "0150215121",
+        "ppartnerName" : "SOLE PROP"
+      }
+    ],
+    "riskStatusCollection" : [
+      {
+        "statusDesc" : "Pending"
+      },
+      {
+        "status" : "Z01",
+        "statusDesc" : "In Progress"
+      },
+      {
+        "status" : "Z02",
+        "statusDesc" : "Approved"
+      },
+      {
+        "status" : "Z03",
+        "statusDesc" : "Referred"
+      },
+      {
+        "status" : "Z04",
+        "statusDesc" : "Declined"
+      }
+    ],
+    "bpCreditStub" : [
+      {
+        "partner" : "0150218390",
+        "processType" : "ZRPM",
+        "stage" : "3",
+        "product" : "161",
+        "ncaInd" : false,
+        "credStub" : true
+      },
+      {
+        "partner" : "0150218390",
+        "processType" : "ZRPM",
+        "stage" : "3",
+        "product" : "4477",
+        "ncaInd" : false,
+        "credStub" : false
+      },
+      {
+        "partner" : "0150218390",
+        "processType" : "ZRPM",
+        "stage" : "3",
+        "product" : "4478",
+        "ncaInd" : false,
+        "credStub" : true
+      },
+      {
+        "partner" : "0150218390",
+        "processType" : "ZRPO",
+        "stage" : "3",
+        "product" : "BRCP",
+        "ncaInd" : false,
+        "credStub" : false
+      }
+    ]
+  }
+}

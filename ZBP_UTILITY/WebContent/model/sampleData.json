@@ -1,0 +1,42 @@
+{
+  "custDetails" :
+    {
+      "Name"     : "Mark",
+      "Surname"  : "Bailey",
+      "IDNumber" : "7709155058083",
+      "Address"  :
+        { 
+          "Street" : "4 Darrock Avenue",
+          "Suburb" : "Albemarle Ext2",
+          "City"   : "Germiston"
+        }
+    },
+  "listAccounts" : [
+    {
+      "System"  : "110",
+      "Account" : "347637683" 
+    },
+    {
+      "System"  : "001",
+      "Account" : "79670680" 
+    }  
+  ], 
+  "listItems" : [
+    {
+      "title" : "Sales Reports",
+      "MATNR" : "000000000000202031",
+       "info" : "Overdue"
+    },
+    {
+      "title" : "Purchase Reports",
+      "MATNR" : "000000000000202033",
+      "info" : "Overdue",
+      "infoState" : "Error"
+    },
+    {      
+      "title" : "Financial Reports",
+      "MATNR" : "000000000000202036",
+      "info" : "4 day ago"
+    }
+  ]
+}

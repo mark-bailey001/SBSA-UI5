@@ -1,0 +1,190 @@
+{
+  "partner" : "0531196790",
+  "maxMonthRepay" : "0",
+  "channel" : "Z002",
+  "income" : "360000000",
+  "expense" : "6720000",
+  "products" : [
+    {
+      "productCode" : "4478",
+      "decisionCode" : "A",
+      "declineCod1" : "AA01",
+      "declineCod2" : "",
+      "declineCod3" : "",
+      "declineCod4" : "",
+      "declineCod5" : "",
+      "declineCod6" : "",
+      "declineCod7" : "",
+      "declineCod8" : "",
+      "declineCod9" : "",
+      "declineCod10" : "",
+      "overrideInd" : "N",
+      "maxLimAmnt" : "5000000",
+      "minLimAmnt" : "65500",
+      "maxTermMonths" : "12",
+      "minTermMonths" : "12",
+      "totInterestRate" : "25.25",
+      "ccProduct" : {
+        "creditCategory" : "",
+        "accountNumber" : "",
+        "systemId" : "",
+        "creditProduct" : ""
+      },
+      "existingAccount" : {
+        "systemId" : "110",
+        "accountNum" : "0000000240097149"
+      },
+      "pricing" : {
+        "condType" : "",
+        "condAmt" : "0"
+      },
+      "planType" : ""
+    }
+  ],
+  "coiDetails" : {
+    "accNo" : "",
+    "accIbt" : "",
+    "accSourceSys" : "",
+    "lastSalDate" : "",
+    "incMthEst" : "0",
+    "incPayFrequency" : "",
+    "incPayDay" : ""
+  },
+  "relatedPartyInfo" : [
+    {
+      "partnerId" : "0530538474",
+      "reltype" : "",
+      "relnr" : "",
+      "income" : [
+        {
+          "incomeType" : "I1",
+          "incomeDesc" : "Gross Income/Wages",
+          "incomeAmt" : "5600000",
+          "incomeFreq" : "4",
+          "incomeFreqText" : "Monthly"
+        }
+      ],
+      "expenses" : [
+        {
+          "expenseType" : "E1",
+          "expenseDesc" : "Total Expenses",
+          "expenseAmt" : "80000",
+          "expenseFreq" : "4",
+          "expenseFreqText" : "Monthly"
+        }
+      ],
+      "assets" : [
+        {
+          "assetType" : "A1",
+          "assetDesc" : "Total Assets",
+          "assetAmt" : "560000",
+          "assetFreq" : "4"
+        }
+      ],
+      "liabilities" : [
+        {
+          "liabilityType" : "L1",
+          "liabilityDesc" : "Total Liabilities",
+          "liabilityAmt" : "80000",
+          "liabilityFreq" : "4"
+        }
+      ],
+      "consents" : [
+        {
+          "zzConsentCode" : "0003",
+          "zzConsentResp" : "N"
+        },
+        {
+          "zzConsentCode" : "0001",
+          "zzConsentResp" : "N"
+        },
+        {
+          "zzConsentCode" : "0002",
+          "zzConsentResp" : "N"
+        },
+        {
+          "zzConsentCode" : "08",
+          "zzConsentResp" : "Y"
+        },
+        {
+          "zzConsentCode" : "07",
+          "zzConsentResp" : "Y"
+        }
+      ],
+      "pip" : {
+        "publicOfficial" : "N",
+        "publicOfficialRelated" : "N",
+        "relationshipNature" : "",
+        "publicOfficialFirstName" : "",
+        "publicOfficialLastName" : ""
+      }
+    }
+  ],
+  "entityInfo" : {
+    "turnover" : [
+      {
+        "incomeType" : "I1",
+        "incomeDesc" : "Total Income",
+        "incomeAmt" : "360000000",
+        "incomeFreq" : "7",
+        "incomeFreqText" : "ANNUALLY"
+      }
+    ],
+    "assets" : [
+      {
+        "assetType" : "",
+        "assetDesc" : "",
+        "assetAmt" : "",
+        "assetFreq" : ""
+      }
+    ],
+    "expenses" : [
+      {
+        "expenseType" : "E1",
+        "expenseDesc" : "Total Expenses",
+        "expenseAmt" : "6720000",
+        "expenseFreq" : "7",
+        "expenseFreqText" : "ANNUALLY"
+      }
+    ],
+    "liabilities" : [
+      {
+        "liabilityType" : "",
+        "liabilityDesc" : "",
+        "liabilityAmt" : "",
+        "liabilityFreq" : ""
+      }
+    ],
+    "consents" : [
+      {
+        "zzConsentCode" : "0003",
+        "zzConsentResp" : "N"
+      },
+      {
+        "zzConsentCode" : "0001",
+        "zzConsentResp" : "N"
+      },
+      {
+        "zzConsentCode" : "0002",
+        "zzConsentResp" : "N"
+      },
+      {
+        "zzConsentCode" : "08",
+        "zzConsentResp" : "Y"
+      },
+      {
+        "zzConsentCode" : "07",
+        "zzConsentResp" : "Y"
+      },
+      {
+        "zzConsentCode" : "11",
+        "zzConsentResp" : "Y"
+      },
+      {
+        "zzConsentCode" : "12",
+        "zzConsentResp" : "Y"
+      }
+    ]
+  },
+  "legalDelMeth" : "ZHND"
+}

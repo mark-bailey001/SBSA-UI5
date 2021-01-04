@@ -1,0 +1,20 @@
+{
+  "openApps" : [
+    {
+      "offerNo" : "0045045875",
+      "prodId" : "ZAOD",
+      "openInd" : "Y",
+      "processType" : "ZRPM",
+      "origChannel" : "Z002",
+      "expiryDate" : "2020-06-18"
+    },
+    {
+      "offerNo" : "0045045876",
+      "prodId" : "ZAOD",
+      "openInd" : "Y",
+      "processType" : "ZRPM",
+      "origChannel" : "Z002",
+      "expiryDate" : "2020-06-18"
+    }
+  ]
+}

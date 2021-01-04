@@ -1,0 +1,181 @@
+{
+  "output" : {
+    "mainInfo" : {
+      "partner" : "0150242483",
+      "type" : "1",
+      "typeDescr" : "Person",
+      "bpkind" : "ZRET",
+      "augrp" : "ZSBS",
+      "name1Text" : "DR & MRS SUNITI CHOWHAN",
+      "natio" : "ZA",
+      "natioDescr" : "South Africa",
+      "legalEnty" : "07",
+      "entityDescr" : "Private Company",
+      "segment" : "988",
+      "segmentDescr" : "STAFF ACCOUNTS",
+      "fraudConsent" : "YES",
+      "riskRating" : {
+        "riskScore" : "46.75",
+        "riskDate" : "2018-03-19",
+        "riskLevel" : "MEDIUM",
+        "nextDate" : "2018-03-19"
+      }
+    },
+    "pipInfo" : [
+      {
+        "pipQuestion" : "Are you related to or associated to a public official in a position of authority?",
+        "pipAnswer" : "YES"
+      },
+      {
+        "pipQuestion" : "What is the nature of the relationship or association?",
+        "pipAnswer" : "Close Associate"
+      },
+      {
+        "pipQuestion" : "First Name of PIP Relationship.",
+        "pipAnswer" : "Peter"
+      },
+      {
+        "pipQuestion" : "Last Name of PIP Relationship.",
+        "pipAnswer" : "Jones"
+      },
+      {
+        "pipQuestion" : "Are you a public official in a position of authority?",
+        "pipAnswer" : "NO"
+      }
+    ],
+    "bpRiskInd" : [
+      {
+        "riskInd" : "SANCTION",
+        "status" : "Z02",
+        "statusDesc" : "Approved"
+      },
+      {
+        "riskInd" : "PIP",
+        "status" : "Z03",
+        "statusDesc" : "Referred"
+      },
+      {
+        "riskInd" : "RISK",
+        "status" : "Z01",
+        "statusDesc" : "In Progress"
+      }
+    ],
+    "riskStatusCollection" : [
+    {
+    	"status" : " " ,
+    	"statusDesc" : "Pending"
+    },
+    {
+    	"status" : "Z1" ,
+    	"statusDesc" : "In Progress"
+    },
+    {
+    	"status" : "Z2" ,
+    	"statusDesc" : "Approved"
+    },
+    {
+    	"status" : "Z3" ,
+    	"statusDesc" : "Referred"
+    },
+    {
+    	"status" : "Z4" ,
+    	"statusDesc" : "Declined"
+    }
+    ],
+    "bpKycStatus" : [
+      {
+        "kycCountry" : "ZA",
+        "kycRole" : "CUSTOMER",
+        "kycRoleDescr" : "Customer",
+        "kycStatus" : "Y",
+        "kycStatusDescr" : "Complete"
+      }
+    ],
+    "bpPayCards" : [
+      {
+        "validTo" : "99991231",
+        "validFrom" : "19000101",
+        "cardType" : "Z001",
+        "maskNumber" : "4565332290761309",
+        "stampName" : "SUNITI CHOWHAN",
+        "issuer" : "SBSA",
+        "issuingDate" : "20200501",
+        "typeDescr" : "Autobank Card"
+      },
+      {
+        "validTo" : "99991231",
+        "validFrom" : "19000101",
+        "cardType" : "Z003",
+        "maskNumber" : "9988231298563320",
+        "stampName" : "SUNITI CHOWHAN",
+        "issuer" : "SBSA",
+        "issuingDate" : "20200501",
+        "typeDescr" : "VISA Card"
+      }
+    ],
+    "bpAccounts" : [
+      {
+        "systemId" : "001",
+        "systemDescr" : "BRANCH ACCOUNTING SYSTEM",
+        "accountId" : "0000001604295000",
+        "accountType" : "A0010",
+        "accountDescr" : "CHECKING ACCOUNTS",
+        "accountProductId" : "132",
+        "accountStatus" : "E0004",
+        "statusDescr" : "OPEN",
+        "accountCreateDate" : "20170203",
+        "accountEndDate" : "99991231",
+        "accountTerminationDate" : "99991231",
+        "ppartnerFunction" : "Z0000093",
+        "pfunctionDescr" : "Account Holder",
+        "ppartnerId" : "0150242483",
+        "ppartnerName" : "SUNITI S CHOWHAN",
+        "relatedParties" : [
+          {
+            "partnerFunction" : "Z0000086",
+            "functionDescr" : "Signatory",
+            "businessPartnerId" : "0000000135",
+            "businessPartnerName" : "Chuck CHK Norrs",
+            "validFromDate" : "2020-05-01",
+            "validToDate" : "9999-12-31"
+          }
+        ]
+      },
+      {
+        "systemId" : "001",
+        "systemDescr" : "BRANCH ACCOUNTING SYSTEM",
+        "accountId" : "0000001604449000",
+        "accountType" : "A0010",
+        "accountDescr" : "CHECKING ACCOUNTS",
+        "accountProductId" : "132",
+        "accountStatus" : "E0004",
+        "statusDescr" : "OPEN",
+        "accountCreateDate" : "20170201",
+        "accountEndDate" : "99991231",
+        "accountTerminationDate" : "99991231",
+        "ppartnerFunction" : "Z0000093",
+        "pfunctionDescr" : "Account Holder",
+        "ppartnerId" : "0150242483",
+        "ppartnerName" : "SUNITI S CHOWHAN",
+        "relatedParties" : [
+          {
+            "partnerFunction" : "Z0000088",
+            "functionDescr" : "Authorised Card User",
+            "businessPartnerId" : "0000000133",
+            "businessPartnerName" : "Test",
+            "validFromDate" : "2020-05-07",
+            "validToDate" : "9999-12-31"
+          },
+          {
+            "partnerFunction" : "Z0000039",
+            "functionDescr" : "Account Beneficiary",
+            "businessPartnerId" : "0100001524",
+            "businessPartnerName" : "AGRICULTURAL BANK OF CHINA",
+            "validFromDate" : "2020-05-07",
+            "validToDate" : "9999-12-31"
+          }
+        ]
+      }
+    ]
+  }
+}
